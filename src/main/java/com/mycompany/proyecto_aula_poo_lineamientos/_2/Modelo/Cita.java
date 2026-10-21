@@ -32,51 +32,25 @@ public class Cita {
         this.estado = EstadoCita.PENDIENTE;
         this.detalles = new ArrayList<>();
     }
-         public int getId() { 
-             return id; 
-         }
-    public void setId(int id) { 
-        this.id = id; 
-    }
+         public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public LocalDate getFecha() { 
-        return fecha; 
-    }
-    public void setFecha(LocalDate fecha) { 
-        this.fecha = fecha; 
-    }
+    public LocalDate getFecha() { return fecha; }
+    public void setFecha(LocalDate fecha) { this.fecha = fecha; }
 
-    public LocalTime getHora() { 
-        return hora; 
-    }
-    public void setHora(LocalTime hora) { 
-        this.hora = hora; 
-    }
+    public LocalTime getHora() { return hora; }
+    public void setHora(LocalTime hora) { this.hora = hora; }
 
-    public EstadoCita getEstado() { 
-        return estado; 
-    }
-    public void setEstado(EstadoCita estado) { 
-        this.estado = estado; 
-    }
+    public EstadoCita getEstado() { return estado; }
+    public void setEstado(EstadoCita estado) { this.estado = estado; }
 
-    public Cliente getCliente() { 
-        return cliente; 
-    }
-    public void setCliente(Cliente cliente) { 
-        this.cliente = cliente; 
-    }
+    public Cliente getCliente() { return cliente; }
+    public void setCliente(Cliente cliente) { this.cliente = cliente; }
 
-    public Barbero getBarbero() { 
-        return barbero; 
-    }
-    public void setBarbero(Barbero barbero) { 
-        this.barbero = barbero; 
-    }
+    public Barbero getBarbero() { return barbero; }
+    public void setBarbero(Barbero barbero) { this.barbero = barbero; }
 
-    public List<DetalleCita> getDetalles() { 
-        return detalles; 
-    }
+    public List<DetalleCita> getDetalles() { return detalles; }
 
     public void agregarDetalle(DetalleCita detalle) {
     this.detalles.add(detalle);

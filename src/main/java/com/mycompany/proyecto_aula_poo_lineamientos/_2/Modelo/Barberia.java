@@ -26,34 +26,18 @@ public class Barberia {
         this.barberos = new ArrayList<>();
         this.servicios = new ArrayList<>();
     }
-     public String getNombre() { 
-         return nombre; 
-     }
-    public void setNombre(String nombre) { 
-        this.nombre = nombre; 
-    }
+     public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public String getDireccion() { 
-        return direccion; 
-    }
-    public void setDireccion(String direccion) { 
-        this.direccion = direccion; 
-    }
+    public String getDireccion() { return direccion; }
+    public void setDireccion(String direccion) { this.direccion = direccion; }
     
     
-    public String getTelefono() { 
-        return telefono; 
-    }
-    public void setTelefono(String telefono) { 
-        this.telefono = telefono; 
-    }
+    public String getTelefono() { return telefono; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
     
-    public List<Barbero> getBarberos() { 
-        return barberos; 
-    }
-    public List<Servicio> getServicios() { 
-        return servicios; 
-    }
+    public List<Barbero> getBarberos() { return barberos; }
+    public List<Servicio> getServicios() { return servicios; }
     
      public void registrarBarbero(Barbero barbero) {
         this.barberos.add(barbero);

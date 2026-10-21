@@ -4,13 +4,8 @@
  */
 package com.mycompany.proyecto_aula_poo_lineamientos._2.Servicios;
 
-/**
- *
- * @author brann
- */
 import java.util.List;
 
-public interface IBuscable <T> {
-  
+public interface IBuscable<T> {
     List<T> buscarPorNombre(String nombre);
 }

@@ -4,18 +4,11 @@
  */
 package com.mycompany.proyecto_aula_poo_lineamientos._2.Servicios;
 
-/**
- *
- * @author brann
- */
-import com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo.Barbero;
-import com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo.Cita;
-import com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo.Cliente;
+import com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 public interface Agendable {
     boolean verificarDisponibilidad(Barbero barbero, LocalDate fecha, LocalTime hora);
     Cita agendar(Cliente cliente, Barbero barbero, LocalDate fecha, LocalTime hora);
-
 }

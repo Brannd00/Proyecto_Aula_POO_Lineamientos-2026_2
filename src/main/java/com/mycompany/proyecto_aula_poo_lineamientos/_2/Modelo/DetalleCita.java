@@ -4,43 +4,33 @@
  */
 package com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo;
 
-/**
- *
- * @author brann
- */
 public class DetalleCita {
-     private Servicio servicio;
+
+    private Servicio servicio;
     private int cantidad;
-    private double precioAplicado;
 
     public DetalleCita(Servicio servicio, int cantidad) {
         this.servicio = servicio;
         this.cantidad = cantidad;
-        this.precioAplicado = servicio.getPrecio();
     }
 
-    public Servicio getServicio() { 
-        return servicio; 
-    }
-    public void setServicio(Servicio servicio) { 
-        this.servicio = servicio; 
+    public Servicio getServicio() {
+        return servicio;
     }
 
-    public int getCantidad() { 
-        return cantidad; 
-    }
-    public void setCantidad(int cantidad) { 
-        this.cantidad = cantidad; 
+    public void setServicio(Servicio servicio) {
+        this.servicio = servicio;
     }
 
-    public double getPrecioAplicado() { 
-        return precioAplicado; 
+    public int getCantidad() {
+        return cantidad;
     }
-    public void setPrecioAplicado(double precioAplicado) { 
-        this.precioAplicado = precioAplicado; 
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
     public double calcularSubtotal() {
-        return cantidad * precioAplicado;
+        return servicio.getPrecio() * cantidad;
     }
 }

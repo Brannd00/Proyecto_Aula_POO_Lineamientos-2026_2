@@ -2,14 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo;
+   package com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo;
 
-/**
- *
- * @author brann
- */
+
 public class Servicio {
-    private int id;
+    
+private int id;
     private String nombre;
     private double precio;
     private int duracionMinutos;
@@ -23,40 +21,20 @@ public class Servicio {
         this.descripcion = descripcion;
     }
 
-    public int getId() { 
-        return id; 
-    }
-    public void setId(int id) { 
-        this.id = id; 
-    }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public String getNombre() { 
-        return nombre; 
-    }
-    public void setNombre(String nombre) { 
-        this.nombre = nombre; 
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public double getPrecio() { 
-        return precio; 
-    }
-    public void setPrecio(double precio) { 
-        this.precio = precio; 
-    }
+    public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
 
-    public int getDuracionMinutos() { 
-        return duracionMinutos; 
-    }
-    public void setDuracionMinutos(int duracionMinutos) { 
-        this.duracionMinutos = duracionMinutos; 
-    }
+    public int getDuracionMinutos() { return duracionMinutos; }
+    public void setDuracionMinutos(int duracionMinutos) { this.duracionMinutos = duracionMinutos; }
 
-    public String getDescripcion() { 
-        return descripcion; 
-    }
-    public void setDescripcion(String descripcion) { 
-        this.descripcion = descripcion; 
-    }
+    public String getDescripcion() { return descripcion; }
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
 
     @Override
     public String toString() {
