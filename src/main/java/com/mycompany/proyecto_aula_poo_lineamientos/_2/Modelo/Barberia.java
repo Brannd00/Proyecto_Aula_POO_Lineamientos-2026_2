@@ -2,14 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-   package com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo;
+package com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo;
 
+/**
+ *
+ * @author brann
+ */
 import java.util.ArrayList;
 import java.util.List;
 
 public class Barberia {
-    
-    private String nombre;
+      private String nombre;
     private String direccion;
     private String telefono;
     private List<Barbero> barberos;
