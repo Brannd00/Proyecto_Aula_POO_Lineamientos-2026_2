@@ -93,7 +93,6 @@ public class PanelAgendarCita extends JPanel {
         actualizarHoras();
     }
 
-    // ================================================================ Construcción
 
     private JScrollPane crearPasos() {
         JPanel pasos = new JPanel();
@@ -253,7 +252,6 @@ public class PanelAgendarCita extends JPanel {
         return p;
     }
 
-    // ================================================================ Datos y eventos
 
     private void cargarCombos() {
         for (Barbero b : controlador.listarBarberosActivos()) {
@@ -477,7 +475,6 @@ public class PanelAgendarCita extends JPanel {
         txtNombre.requestFocusInWindow();
     }
 
-    // ================================================================ Utilidades
 
     private boolean telefonoValido() {
         return txtTelefono.getText().trim().matches("\\d{7,10}");
