@@ -5,6 +5,7 @@
 package com.mycompany.proyecto_aula_poo_lineamientos._2.Servicios;
 import com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo.Cita;
 import com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo.Cliente;
+import com.mycompany.proyecto_aula_poo_lineamientos._2.Modelo.EstadoCita;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -54,9 +55,16 @@ public class ClienteServicio implements IBuscable <Cliente>{
         cliente.setCorreo(correo);
     }
 
-    public void eliminarCliente(Cliente cliente) {
-        clientes.remove(cliente);
+   public void eliminarCliente(Cliente cliente) {
+
+    if (!citaServicio.listarPorCliente(cliente).isEmpty()) {
+
+        throw new IllegalStateException(
+                "El cliente tiene citas asociadas.");
     }
+
+    clientes.remove(cliente);
+}
 
     public Cliente buscarPorId(int id) {
         for (Cliente c : clientes) {
@@ -85,9 +93,19 @@ public class ClienteServicio implements IBuscable <Cliente>{
         return resultado;
     }
 
-    public List<Cita> consultarHistorialServicios(Cliente cliente) {
-        return citaServicio.listarPorCliente(cliente);
+   public List<Cita> consultarHistorialServicios(Cliente cliente) {
+
+    List<Cita> historial = new ArrayList<>();
+
+    for (Cita c : citaServicio.listarPorCliente(cliente)) {
+
+        if (c.getEstado() == EstadoCita.ATENDIDA) {
+            historial.add(c);
+        }
     }
+
+    return historial;
+}
 
     public List<Cliente> listarClientes() {
         return new ArrayList<>(clientes);

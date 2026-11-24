@@ -74,20 +74,44 @@ public class Cita {
         this.barbero = barbero; 
     }
 
-    public List<DetalleCita> getDetalles() { 
-        return detalles; 
+   public List<DetalleCita> getDetalles() {
+    return List.copyOf(detalles);
+}
+   
+    public void agregarDetalle(DetalleCita detalle) {
+
+    if (estado != EstadoCita.PENDIENTE) {
+
+        throw new IllegalStateException(
+                "La cita no se puede modificar.");
     }
 
-    public void agregarDetalle(DetalleCita detalle) {
-    this.detalles.add(detalle);
+    if (detalle == null) {
+
+        throw new IllegalArgumentException(
+                "El detalle es obligatorio.");
     }
-     public int calcularDuracionTotal() {
-        int total = 0;
-        for (DetalleCita d : detalles) {
-            total += d.getServicio().getDuracionMinutos() * d.getCantidad();
-        }
-        return total;
+
+    if ((long) calcularDuracionTotal()
+            + detalle.calcularDuracion() > 60) {
+
+        throw new IllegalArgumentException(
+                "La cita supera los 60 minutos.");
     }
+
+    detalles.add(detalle);
+}
+  
+    public int calcularDuracionTotal() {
+
+    int total = 0;
+
+    for (DetalleCita d : detalles) {
+        total += d.calcularDuracion();
+    }
+
+    return total;
+}
 
     public double calcularTotal() {
         double total = 0;

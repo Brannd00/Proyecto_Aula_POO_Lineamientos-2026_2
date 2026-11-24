@@ -16,10 +16,15 @@ public class BarberoServicio implements IBuscable<Barbero> {
     private final List<Barbero> barberos = new ArrayList<>();
     private final CitaServicio citaServicio;
     private int siguienteId = 1;
+    private final PagoServicio pagoServicio;
 
-    public BarberoServicio(CitaServicio citaServicio) {
-        this.citaServicio = citaServicio;
-    }
+    public BarberoServicio(
+        CitaServicio citaServicio,
+        PagoServicio pagoServicio) {
+
+    this.citaServicio = citaServicio;
+    this.pagoServicio = pagoServicio;
+}
 
     public Barbero registrarBarbero(String nombre, String telefono, String especialidad) {
         if (nombre == null || nombre.trim().isEmpty()) {
@@ -50,16 +55,35 @@ public class BarberoServicio implements IBuscable<Barbero> {
         return agenda;
     }
 
-    public double calcularComision(Barbero barbero, LocalDate inicio, LocalDate fin) {
-        double total = 0;
-        for (Cita c : citaServicio.listarPorBarbero(barbero)) {
-            boolean enRango = !c.getFecha().isBefore(inicio) && !c.getFecha().isAfter(fin);
-            if (c.getEstado() == EstadoCita.ATENDIDA && enRango) {
-                total += c.calcularTotal();
-            }
-        }
-        return total * PORCENTAJE_COMISION;
+  public double calcularComision(
+        Barbero barbero, LocalDate inicio, LocalDate fin) {
+
+    if (barbero == null || inicio == null
+            || fin == null || inicio.isAfter(fin)) {
+
+        throw new IllegalArgumentException(
+                "Los datos del periodo no son validos.");
     }
+
+    double total = 0;
+
+    for (Pago p : pagoServicio.listarPagos()) {
+
+        boolean mismoBarbero =
+                p.getCita().getBarbero().getId()
+                == barbero.getId();
+
+        boolean enRango =
+                !p.getFechaPago().isBefore(inicio)
+                && !p.getFechaPago().isAfter(fin);
+
+        if (mismoBarbero && enRango) {
+            total += p.getMontoTotal();
+        }
+    }
+
+    return total * PORCENTAJE_COMISION;
+}
 
     @Override
     public List<Barbero> buscarPorNombre(String nombre) {
