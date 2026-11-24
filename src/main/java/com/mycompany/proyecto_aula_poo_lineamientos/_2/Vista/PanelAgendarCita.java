@@ -115,7 +115,7 @@ public class PanelAgendarCita extends JPanel {
     }
 
     private JPanel crearPasoDatos() {
-        JPanel p = crearPaso("Paso 1 · Tus datos", "Escribe tus datos para poder reservar tu cita.");
+        JPanel p = crearPaso("· Datos del cliente", "Escribe tus datos para poder reservar tu cita.");
         txtNombre.setToolTipText("Escribe tu nombre y apellido");
         txtTelefono.setToolTipText("Solo números, entre 7 y 10 dígitos");
         txtCorreo.setToolTipText("Opcional");
@@ -126,7 +126,7 @@ public class PanelAgendarCita extends JPanel {
     }
 
     private JPanel crearPasoServicios() {
-        JPanel p = crearPaso("Paso 2 · Elige tus servicios",
+        JPanel p = crearPaso("· Servicios",
                 "Marca uno o más servicios. Cada cita dura máximo "
                 + BarberiaControlador.TURNO_MINUTOS + " minutos en total.");
         int fila = 1;
@@ -151,7 +151,7 @@ public class PanelAgendarCita extends JPanel {
     }
 
     private JPanel crearPasoTurno() {
-        JPanel p = crearPaso("Paso 3 · Elige tu turno",
+        JPanel p = crearPaso("·Turno del cliente",
                 "Escoge con quién quieres atenderte, el día y la hora. Solo verás horas libres.");
         agregarFila(p, 1, "Barbero", comboBarbero);
         agregarFila(p, 2, "Día", comboDia);

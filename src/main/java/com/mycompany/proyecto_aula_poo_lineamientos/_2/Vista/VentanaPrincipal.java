@@ -89,7 +89,6 @@ public class VentanaPrincipal extends JFrame {
         }
     }
 
-    // ================================================================ Construcción
 
     private JPanel crearEncabezado(String nombreBarberia) {
         JPanel p = new JPanel(new BorderLayout());
@@ -138,7 +137,6 @@ public class VentanaPrincipal extends JFrame {
         return b;
     }
 
-    /** Panel de relleno para las pantallas que todavía no están hechas. */
     private JPanel crearPantallaPendiente(String nombre) {
         JPanel p = new JPanel(new GridBagLayout());
         JLabel mensaje = new JLabel("La pantalla «" + nombre + "» está en construcción.");
@@ -148,7 +146,6 @@ public class VentanaPrincipal extends JFrame {
         return p;
     }
 
-    // ================================================================ Navegación
 
     private void agregarPantalla(String clave, String subtitulo, JComponent panel) {
         contenedor.add(panel, clave);

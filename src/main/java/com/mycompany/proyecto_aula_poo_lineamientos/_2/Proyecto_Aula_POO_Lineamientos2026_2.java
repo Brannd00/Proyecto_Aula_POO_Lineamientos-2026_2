@@ -10,8 +10,8 @@ import javax.swing.SwingUtilities;
  */
 public class Proyecto_Aula_POO_Lineamientos2026_2 {
 
-    private static final String NOMBRE_BARBERIA = "Barbería Don Corte";
-    private static final String DIRECCION_BARBERIA = "Calle 10 # 5-20";
+    private static final String NOMBRE_BARBERIA = "Barbería UDeC";
+    private static final String DIRECCION_BARBERIA = "Barrio los Alpes Mz C cll 31-e";
     private static final String TELEFONO_BARBERIA = "3001234567";
 
     public static void main(String[] args) {
