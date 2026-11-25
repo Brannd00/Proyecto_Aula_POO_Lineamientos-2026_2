@@ -16,12 +16,13 @@ import java.util.List;
  * @author brann
  */
 public class BarberiaControlador {
-        private final Barberia barberia;
+    private final Barberia barberia;
     private final CitaServicio citaServicio;
     private final ClienteServicio clienteServicio;
     private final BarberoServicio barberoServicio;
     private final ServicioCatalogoServicio catalogoServicio;
     private final PagoServicio pagoServicio;
+    private final ReporteServicio reporteServicio;
     public static final LocalTime HORA_APERTURA =
         CitaServicio.HORA_APERTURA;
 
@@ -49,9 +50,17 @@ public static final int TURNO_MINUTOS =
 
     this.catalogoServicio =
             new ServicioCatalogoServicio();
+    
+    this.reporteServicio = new ReporteServicio(
+        pagoServicio,
+        barberoServicio,
+        citaServicio);
 }
 
 
+
+   
+   
     public String getNombreBarberia() {
         return barberia.getNombre();
     }
@@ -269,5 +278,9 @@ public static final int TURNO_MINUTOS =
         }
         throw new IllegalArgumentException("No existe una cita con id " + id + ".");
     }
+    public void generarReportes(LocalDate inicio, LocalDate fin)
+        throws InterruptedException {
 
+    reporteServicio.generarReportes(inicio, fin);
+}
 }
